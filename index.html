@@ -111,7 +111,12 @@
       <button id="noBtn">No</button>
     </div>
     <div class="message" id="message">Yay!! 💕🥰<br/><span id="personalMessage" style="display:block; margin-top:10px; font-size:1.1rem;">Best decision you’ve made all day 😘</span></div>
-    <img id="yesPhoto" src="./olivia.jpg" alt="Valentine photo" style="display:none; margin-top:20px; width:120px; max-width:70%; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
+    <div id="photoRow" style="display:none; margin-top:20px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <img src="./olivia.jpg" alt="Photo 1" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
+      <img src="./olivia2.jpg" alt="Photo 2" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
+      <img src="./olivia3.jpg" alt="Photo 3" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
+      <img src="./olivia4.jpg" alt="Photo 4" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
+    </div>
   </div>
 
   <script>
@@ -137,8 +142,8 @@
 
     yesBtn.addEventListener("click", () => {
       message.style.display = "block";
-      const photo = document.getElementById("yesPhoto");
-      photo.style.display = "block";
+      const photoRow = document.getElementById("photoRow");
+      photoRow.style.display = "flex";
 
       for (let i = 0; i < 25; i++) {
         const heart = document.createElement("div");
@@ -164,4 +169,3 @@
   </script>
 </body>
 </html>
-
