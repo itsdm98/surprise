@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Will You Be My Valentine?</title>
+
   <style>
     body {
       margin: 0;
@@ -66,6 +67,7 @@
       color: #ff4d6d;
       display: none;
     }
+
     .heart {
       position: fixed;
       bottom: -20px;
@@ -100,22 +102,34 @@
       30% { opacity: 1; transform: scale(1); }
       100% { opacity: 0; transform: scale(0.3); }
     }
-  }
   </style>
 </head>
+
 <body>
   <div class="card">
     <h1>Will you be my valetine my lovely jubbley 💖</h1>
+
     <div class="buttons">
       <button id="yesBtn">Yes</button>
       <button id="noBtn">No</button>
     </div>
-    <div class="message" id="message">Yay!! 💕🥰<br/><span id="personalMessage" style="display:block; margin-top:10px; font-size:1.1rem;">Best decision you’ve made all day 😘</span></div>
-    <div id="photoRow" style="display:none; margin-top:20px; gap:12px; justify-content:center; flex-wrap:wrap;">
-      <img src="./olivia.jpg" alt="Photo 1" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
-      <img src="./olivia2.jpg" alt="Photo 2" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
-      <img src="./olivia3.jpg" alt="Photo 3" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
-      <img src="./olivia4.jpg" alt="Photo 4" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
+
+    <div class="message" id="message">
+      Yay!! 💕🥰<br />
+      <span style="display:block; margin-top:10px; font-size:1.1rem;">
+        Best decision you’ve made all day 😘
+      </span>
+    </div>
+
+    <!-- Photos (hidden by default) -->
+    <div
+      id="photoRow"
+      style="display:none; margin-top:20px; gap:12px; justify-content:center; flex-wrap:wrap;"
+    >
+      <img src="./olivia.jpg"  style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
+      <img src="./olivia2.jpg" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
+      <img src="./olivia3.jpg" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
+      <img src="./olivia4.jpg" style="width:120px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.2);" />
     </div>
   </div>
 
@@ -123,6 +137,8 @@
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
     const message = document.getElementById("message");
+    const photoRow = document.getElementById("photoRow");
+
     let yesScale = 1;
 
     noBtn.style.left = "140px";
@@ -142,7 +158,6 @@
 
     yesBtn.addEventListener("click", () => {
       message.style.display = "block";
-      const photoRow = document.getElementById("photoRow");
       photoRow.style.display = "flex";
 
       for (let i = 0; i < 25; i++) {
@@ -156,7 +171,8 @@
         setTimeout(() => heart.remove(), 4000);
       }
     });
-    // background sparkles
+
+    // Background sparkles
     setInterval(() => {
       const sparkle = document.createElement("div");
       sparkle.className = "sparkle";
@@ -169,5 +185,3 @@
   </script>
 </body>
 </html>
-
-
